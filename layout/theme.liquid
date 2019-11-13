@@ -88,9 +88,8 @@
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{% if request.page_type != blank %}{{ request.page_type | handle }}{% else %}none{% endif %} data-animations">
 
   <a class="visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
-
+  <p>Testhh</p>
   {% section 'header' %}
-
   <div class="main-content{% if request.page_type == blank %} main-content--no-template{% endif %}" data-drawer-push>
     <div class="main-content__wrapper">
       <main class="content-for-layout" id="MainContent" role="main">
@@ -100,6 +99,8 @@
       {% section 'footer' %}
     </div>
   </div>
+
+  {% section 'button'%}
 
   {% include 'cart-drawer' %}
   <ul hidden>
