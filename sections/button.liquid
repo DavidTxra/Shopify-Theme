@@ -1,5 +1,5 @@
 <div class="container">
-  <h3> {{ section.settings.text-box }} </h3>
+  <h3 style="color:{{ section.settings.boutonSelect }}"> {{ section.settings.text-box }} </h3>
   <a href="{{ section.settings.link }}"><button class="button" style="background-color:{{ section.settings.color }}; width:{{ section.settings.tailleBouton }}px;">{{ section.settings.linktext }}</button></a>
 </div>
 <br>
@@ -60,6 +60,15 @@
       "unit": "px",
       "label": "Taille",
       "default": 150
+    },
+    {
+      "type": "select",
+      "id": "boutonSelect",
+      "options": [
+          { "value": "yellow", "label": "Jaune"},
+          { "value": "green", "label": "Vert"}
+      ],
+      "label": "Couleur du texte"
     }
   ]
   ,
