@@ -1,0 +1,6 @@
+development:
+  password: f03dd9611fcc1c9ebc093eb770332e89
+  theme_id: "79248588874"
+  store: david-teixeira.myshopify.com
+  ignore_files:
+    - config/settings_data.json
