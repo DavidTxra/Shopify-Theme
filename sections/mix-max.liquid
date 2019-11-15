@@ -1,0 +1,23 @@
+{% for collection in collections[section.settings.iim_collection].products %}
+    <img src="{{ collection | img_url }}">
+{% endfor %}
+
+{% schema %}
+{
+  "name": "Collection IIM",
+  "settings": [
+    {
+    "type": "collection",
+    "id": "iim_collection",
+    "label": "Selectionner la collection"
+    }
+  ]
+  ,
+  "presets": [
+    {
+      "name": "Collection IIM",
+      "category": "Cours IIM"
+    }
+  ]
+}
+{% endschema %}
