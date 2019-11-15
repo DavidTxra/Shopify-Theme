@@ -1,0 +1,82 @@
+<div class="containerMenu">
+    <div class="imgMenu">
+        <img src="{{ section.settings.image_menu | img_url: '350x350' }}">
+    </div>
+    <ul class="parent">
+        {% for link in linklists.menu-exercice-iim.links %}
+            <li><a href="{{ link.url }}">{{ link.title }}</a>
+                {% if link.links != blank %}
+                    <ul class="child">
+                        {% for child_link in link.links %}  
+                            <li><a href= "{{ child_link.url }}">{{ child_link.title }}</a>
+                            {% if child_link.links != blank %}
+                                <ul class="grandchild">
+                                {% for grandchild_link in child_link.links %}  
+                                    <li><a href= "{{ grandchild_link.url }}">{{ grandchild_link.title }}</a></li>
+                                {% endfor %}
+                                </ul>
+                            {% endif %}   
+                            </li>
+                        {% endfor %}
+                    </ul> 
+                {% endif %} 
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<style>
+.containerMenu {
+    background-color: #ededed;
+    width:350px;
+    margin:auto;
+    margin-bottom:50px
+}
+
+.imgMenu {
+    text-align:center;
+    width:100% !important;
+}
+
+.parent {
+    list-style: none;
+    margin: auto;
+    padding: 0;
+    text-align: center;
+}
+
+li:hover {
+    background-color: #00b490;
+}
+
+a {
+  text-decoration: none;
+  color: #232323;
+  transition: color 0.3s ease;
+}
+
+
+</style>
+
+{% schema %}
+{
+  "name": "Menu IIM",
+  "settings": [
+    {
+      "id": "image_menu",
+      "type": "image_picker",
+      "label": "Image du menu"
+    }
+  ]
+  ,
+  "presets": [
+    {
+      "name": "Menu IIM",
+      "category": "Cours IIM"
+    }
+  ]
+}
+{% endschema %}
+
+{% javascript %}
+{% endjavascript %}
